@@ -2,13 +2,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.18),transparent_55%)]">
       <section className="relative min-h-screen bg-[url('/desk.gif')] bg-cover bg-center">
-      <div className="absolute inset-0 bg-linear-to-b from-black/50 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black" />
         <div className="relative">
           <header className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 pt-8">
             <div className="flex items-center gap-3">
               <span className="h-3 w-3 rounded-full bg-[color:var(--accent)]" />
               <p className="text-sm uppercase tracking-[0.35em] text-[color:var(--muted)]">
-                Ayza
+                Gabriel Trigueiro
               </p>
             </div>
             <nav className="hidden items-center gap-6 text-sm text-[color:var(--muted)] sm:flex">
@@ -39,13 +39,14 @@ export default function Home() {
                 </div>
                 <div className="space-y-5">
                   <h1 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-                    Design e codigo para uma identidade digital que faz sentido com
-                    voce.
+                    Front-end com foco em multiplataforma e experiencias
+                    consistentes.
                   </h1>
                   <p className="text-lg leading-relaxed text-[color:var(--muted)]">
-                    Eu sou Ayza, front-end developer. Crio experiencias web
-                    modernas, com foco em performance, branding e uma interface que
-                    transmite sua historia.
+                    Sou desenvolvedor front-end com experiencia em Kotlin Jetpack
+                    Compose, Flutter, TypeScript, React, Node, Next e Java. Atuo
+                    desde 2020 e entrego interfaces claras, performaticas e
+                    alinhadas ao negocio.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-4">
@@ -59,14 +60,14 @@ export default function Home() {
                     className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"
                     href="#contato"
                   >
-                    Solicitar orcamento
+                    Falar comigo
                   </a>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-3">
                   {[
-                    { label: "Especialidade", value: "UI de alto impacto" },
-                    { label: "Base", value: "Sao Paulo, BR" },
-                    { label: "Stack", value: "Next.js + Tailwind" },
+                    { label: "Especialidade", value: "Front-end multiplataforma" },
+                    { label: "Base", value: "Remoto, BR" },
+                    { label: "Stack", value: "Kotlin, Flutter, React, Next" },
                   ].map((item) => (
                     <div
                       key={item.label}
@@ -87,22 +88,22 @@ export default function Home() {
                 <div className="space-y-6">
                   <div className="space-y-3">
                     <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
-                      Manifesto
+                      Perfil
                     </p>
                     <h2 className="text-2xl font-semibold text-white">
-                      Sua marca nao precisa parecer com mais uma.
+                      Experiencia em produtos digitais ponta a ponta.
                     </h2>
                   </div>
                   <p className="text-sm leading-relaxed text-[color:var(--muted)]">
-                    Eu trabalho com um processo enxuto: identidade visual,
-                    prototipacao rapida e desenvolvimento. Cada projeto nasce com
-                    uma narrativa unica.
+                    Atuei em projetos remotos e tenho experiencia com
+                    desenvolvimento Android, iOS e integracoes com Firebase.
+                    Busco soluções diretas, com qualidade e consistencia visual.
                   </p>
                   <div className="space-y-3">
                     {[
-                      "Imersao na sua historia e objetivos",
-                      "Layout responsivo e acessivel",
-                      "Entrega rapida e com suporte",
+                      "Projetos remotos desde 2020",
+                      "Android e iOS com foco em UX",
+                      "Integrações com Firebase",
                     ].map((item) => (
                       <div
                         key={item}
@@ -129,47 +130,86 @@ export default function Home() {
                 Sobre
               </p>
               <h2 className="text-3xl font-semibold text-white">
-                Uma experiencia digital com personalidade.
+                Sobre mim
               </h2>
               <p className="text-base leading-relaxed text-[color:var(--muted)]">
-                Do design ao deploy, tudo e pensado para comunicar quem voce e,
-                gerar confianca e converter. Essa pagina ja e um template pronto
-                para personalizar seu dominio.
+                Desenvolvedor front-end com experiencia em Kotlin Jetpack Compose,
+                Flutter, TypeScript, React, Node, Next e Java. Programo desde
+                2020, atuei em diversos projetos remotos e tenho experiencia com
+                desenvolvimento Android e iOS. Veja os projetos em
+                <a className="text-white underline decoration-white/40" href="#projetos">
+                  {" "}
+                  trabalhos selecionados
+                </a>
+                .
               </p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                {
-                  title: "Identidade visual",
-                  description:
-                    "Paleta, tipografia e grid alinhados ao seu estilo.",
-                },
-                {
-                  title: "Storytelling",
-                  description: "Conteudo direto que destaca seu diferencial.",
-                },
-                {
-                  title: "Performance",
-                  description: "SEO e tempos de carregamento otimizados.",
-                },
-                {
-                  title: "Manutencao",
-                  description:
-                    "Estrutura simples para voce atualizar quando quiser.",
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-2xl border border-white/10 bg-[color:var(--surface)] p-5"
-                >
-                  <h3 className="text-base font-semibold text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-[color:var(--muted)]">
-                    {item.description}
-                  </p>
+            <div className="space-y-6">
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  {
+                    title: "Experiencia",
+                    description: "Front-end multiplataforma com foco em produto.",
+                  },
+                  {
+                    title: "Plataformas",
+                    description: "Web, Android e iOS com interfaces consistentes.",
+                  },
+                  {
+                    title: "Stack",
+                    description: "Kotlin, Flutter, React, Next, Node e Java.",
+                  },
+                  {
+                    title: "Interesses",
+                    description:
+                      "Visual novels, JRPGs, animes, bike e paisagens.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-2xl border border-white/10 bg-[color:var(--surface)] p-5"
+                  >
+                    <h3 className="text-base font-semibold text-white">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-[color:var(--muted)]">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-[color:var(--surface)] p-5">
+                <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
+                  Tecnologias
+                </p>
+                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                  {[
+                    { label: "Kotlin", src: "/tech/kotlin.svg" },
+                    { label: "Jetpack Compose", src: "/tech/compose.svg" },
+                    { label: "Flutter", src: "/tech/flutter.svg" },
+                    { label: "TypeScript", src: "/tech/typescript.svg" },
+                    { label: "React", src: "/tech/react.svg" },
+                    { label: "Next.js", src: "/tech/nextjs.svg" },
+                    { label: "Node.js", src: "/tech/nodejs.svg" },
+                    { label: "Java", src: "/tech/java.svg" },
+                    { label: "Firebase", src: "/tech/firebase.svg" },
+                  ].map((tech) => (
+                    <div
+                      key={tech.label}
+                      className="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white"
+                    >
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10">
+                        <img
+                          alt={tech.label}
+                          className="h-4 w-4"
+                          src={tech.src}
+                        />
+                      </div>
+                      {tech.label}
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </section>
 
@@ -180,7 +220,7 @@ export default function Home() {
                   Projetos
                 </p>
                 <h2 className="text-3xl font-semibold text-white">
-                  Selecionados recentes
+                  Trabalhos selecionados
                 </h2>
               </div>
               <a
@@ -193,28 +233,36 @@ export default function Home() {
             <div className="mt-8 grid gap-6 lg:grid-cols-3">
               {[
                 {
-                  title: "Landing premium",
+                  title: "Juntoo",
                   description:
-                    "Pagina unica com foco em conversao e identidade marcante.",
-                  tag: "Branding",
+                    "App de linha de credito com experiencia clara e orientada a resultados.",
+                  tag: "Fintech",
+                  link: "https://apps.apple.com/br/app/junto%24/id1563846408",
                 },
                 {
-                  title: "Portfolio modular",
+                  title: "Guardiao do Consumidor",
                   description:
-                    "Estrutura leve para projetos, bio e formulario direto.",
-                  tag: "Portfolio",
+                    "App para consultar estado de credito com foco em clareza e confianca.",
+                  tag: "Creditos",
+                  link: "https://apps.apple.com/br/app/guardi%C3%A3o-do-consumidor/id6753079908",
                 },
                 {
-                  title: "Site boutique",
+                  title: "LBS",
                   description:
-                    "Experiencia refinada para negocios criativos e autorais.",
-                  tag: "Negocios",
+                    "Sistema de compras e estoque online para rede de joalherias.",
+                  tag: "E-commerce",
+                  link: "#contato",
                 },
               ].map((item) => (
                 <div
                   key={item.title}
                   className="rounded-3xl border border-white/10 bg-[color:var(--surface)] p-6 transition hover:-translate-y-1 hover:border-white/25"
                 >
+                  <div className="mb-4 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                    <div className="flex aspect-[4/3] items-center justify-center text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
+                      Imagem do projeto
+                    </div>
+                  </div>
                   <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
                     {item.tag}
                   </p>
@@ -224,6 +272,14 @@ export default function Home() {
                   <p className="mt-3 text-sm leading-relaxed text-[color:var(--muted)]">
                     {item.description}
                   </p>
+                  <a
+                    className="mt-4 inline-flex text-sm font-semibold text-[color:var(--accent-2)]"
+                    href={item.link}
+                    target={item.link.startsWith("http") ? "_blank" : undefined}
+                    rel={item.link.startsWith("http") ? "noreferrer" : undefined}
+                  >
+                    Ver detalhes →
+                  </a>
                 </div>
               ))}
             </div>
@@ -234,25 +290,41 @@ export default function Home() {
             className="mt-20 rounded-3xl border border-white/10 bg-[linear-gradient(160deg,_rgba(139,92,246,0.18),_rgba(21,25,35,0.9))] p-10 text-center"
           >
             <h2 className="text-3xl font-semibold text-white">
-              Vamos construir seu site?
+              Vamos conversar?
             </h2>
             <p className="mt-4 text-base text-[color:var(--muted)]">
-              Me conte sobre seu projeto e eu retorno com uma proposta em ate 48h.
+              Me chame para falar de projetos, parcerias ou novas oportunidades.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <a
                 className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0b0d12] transition hover:translate-y-[-2px]"
-                href="mailto:hello@ayza.me"
+                href="mailto:devgabrieltrigueiro@gmail.com"
               >
-                hello@ayza.me
+                devgabrieltrigueiro@gmail.com
               </a>
               <a
                 className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"
-                href="https://www.linkedin.com/"
+                href="https://wa.me/5583998778083"
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp
+              </a>
+              <a
+                className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"
+                href="https://www.linkedin.com/in/devgabrieltrigueiro/"
                 target="_blank"
                 rel="noreferrer"
               >
                 LinkedIn
+              </a>
+              <a
+                className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"
+                href="https://github.com/GabrielTrigueiro"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
               </a>
             </div>
           </section>
