@@ -47,6 +47,12 @@ const copy = {
         description: "Visual novels, JRPGs, animes, bike e paisagens.",
       },
     ],
+    profileCard: {
+      name: "Gabriel Trigueiro",
+      age: "24 anos",
+      role: "Front-end developer",
+      image: "/eu.jpg",
+    },
     techEyebrow: "Tecnologias",
     techs: [
       { label: "Kotlin", src: "https://skillicons.dev/icons?i=kotlin" },
@@ -146,6 +152,12 @@ const copy = {
         description: "Visual novels, JRPGs, anime, biking, landscapes.",
       },
     ],
+    profileCard: {
+      name: "Gabriel Trigueiro",
+      age: "24 years",
+      role: "Front-end developer",
+      image: "/eu.jpg",
+    },
     techEyebrow: "Technologies",
     techs: [
       { label: "Kotlin", src: "https://skillicons.dev/icons?i=kotlin" },
@@ -490,6 +502,29 @@ export default function Home() {
               <h2 className="reveal text-3xl font-semibold text-white" data-reveal>
                 {t.aboutTitle}
               </h2>
+              <div
+                className="glass-card reveal inline-flex items-center gap-4 rounded-2xl p-4"
+                data-reveal
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/10 p-1">
+                  <img
+                    alt={t.profileCard.name}
+                    className="h-full w-full rounded-full object-cover"
+                    src={t.profileCard.image}
+                  />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm font-semibold text-white">
+                    {t.profileCard.name}
+                  </p>
+                  <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
+                    {t.profileCard.age}
+                  </p>
+                  <p className="text-xs text-[color:var(--muted)]">
+                    {t.profileCard.role}
+                  </p>
+                </div>
+              </div>
               <p
                 className="reveal text-base leading-relaxed text-[color:var(--muted)]"
                 data-reveal
