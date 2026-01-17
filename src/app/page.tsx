@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from "react";
 
 const copy = {
   pt: {
-    badge: "Disponivel para novos projetos",
-    heroTitle: "Front-end com foco em multiplataforma e experiencias consistentes.",
+    badge: "Disponível para novos projetos",
+    heroTitle: "Front-end com foco em multiplataforma.",
     heroDescription:
-      "Sou desenvolvedor front-end com experiencia em Kotlin Jetpack Compose, Flutter, TypeScript, React, Node, Next e Java. Atuo desde 2020 e entrego interfaces claras, performaticas e alinhadas ao negocio.",
+      "Sou desenvolvedor front-end com experiência em Kotlin Jetpack Compose, Flutter, TypeScript, React, Node, Next e Java. Atuo desde 2020 criando e desenvolvendo aplicações web e mobile.",
     ctaPrimary: "Ver projetos",
     ctaSecondary: "Falar comigo",
     stats: [
@@ -16,9 +16,9 @@ const copy = {
       { label: "Stack", value: "Kotlin, Flutter, React, Next" },
     ],
     profileEyebrow: "Perfil",
-    profileTitle: "Experiencia em produtos digitais ponta a ponta.",
+    profileTitle: "Experiência em produtos digitais ponta a ponta.",
     profileDescription:
-      "Atuei em projetos remotos e tenho experiencia com desenvolvimento Android, iOS e integracoes com Firebase. Busco soluções diretas, com qualidade e consistencia visual.",
+      "Atuei em projetos remotos e tenho experiência com desenvolvimento Android, iOS e integrações com Firebase. Busco soluções diretas, com qualidade e consistência visual.",
     profileBullets: [
       "Projetos remotos desde 2020",
       "Android e iOS com foco em UX",
@@ -27,11 +27,11 @@ const copy = {
     aboutEyebrow: "Sobre",
     aboutTitle: "Sobre mim",
     aboutDescription:
-      "Desenvolvedor front-end com experiencia em Kotlin Jetpack Compose, Flutter, TypeScript, React, Node, Next e Java. Programo desde 2020, atuei em diversos projetos remotos e tenho experiencia com desenvolvimento Android e iOS.",
+      "Desenvolvedor front-end com experiência em Kotlin Jetpack Compose, Flutter, TypeScript, React, Node, Next e Java. Programo desde 2020, atuei em diversos projetos remotos e tenho experiência com desenvolvimento Android e iOS.",
     aboutLink: "trabalhos selecionados",
     aboutCards: [
       {
-        title: "Experiencia",
+        title: "Experiência",
         description: "Front-end multiplataforma com foco em produto.",
       },
       {
@@ -69,7 +69,7 @@ const copy = {
       {
         title: "Juntoo",
         description:
-          "App de linha de credito com indicações, solicitação de limite e controle de gastos.",
+          "App de linha de crédito com indicações, solicitação de limite e controle de gastos.",
         tag: "Fintech",
         link: "https://apps.apple.com/br/app/juntoo/id6751834827",
         image: "/Shot-juntoo.png",
@@ -77,8 +77,8 @@ const copy = {
       {
         title: "Guardiao do Consumidor",
         description:
-          "App para consultar estado de credito para ter conhecimento do seu score e pendencias.",
-        tag: "Creditos",
+          "App para consultar estado de crédito para ter conhecimento do seu score e pendências.",
+        tag: "Créditos",
         link: "https://apps.apple.com/br/app/guardi%C3%A3o-do-consumidor/id6753079908",
         image: "/Shot.png",
       },
@@ -86,7 +86,7 @@ const copy = {
         title: "Posimed",
         description:
           "App de telemedicina 24 horas.",
-        tag: "Saude",
+        tag: "Saúde",
         link: "https://apps.apple.com/br/app/posimed/id6746877519",
         image: "/shot-posimed.png",
       },
@@ -182,7 +182,7 @@ const copy = {
       {
         title: "Posimed",
         description: "24/7 telemedicine app.",
-        tag: "Saude",
+        tag: "Health",
         link: "https://apps.apple.com/br/app/posimed/id6746877519",
         image: "/shot-posimed.png",
       },
@@ -325,7 +325,7 @@ export default function Home() {
     };
   }, [isEnglish]);
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.18),transparent_55%)]">
+    <div className="min-h-screen bg-black">
       <section
         ref={heroRef}
         className="hero-camera relative min-h-screen bg-[url('/desk.gif')] bg-cover"
@@ -477,7 +477,7 @@ export default function Home() {
       </section>
 
       <section className="relative min-h-screen bg-[url('/night.gif')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/75" />
+        <div className="absolute inset-0 bg-black/40" />
         <main className="relative mx-auto w-full max-w-5xl px-6 pb-24">
           <section id="sobre" className="mt-20 grid gap-10 lg:grid-cols-2">
             <div className="space-y-4">
