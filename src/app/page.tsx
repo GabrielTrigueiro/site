@@ -1,9 +1,206 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const copy = {
+  pt: {
+    badge: "Disponivel para novos projetos",
+    heroTitle: "Front-end com foco em multiplataforma e experiencias consistentes.",
+    heroDescription:
+      "Sou desenvolvedor front-end com experiencia em Kotlin Jetpack Compose, Flutter, TypeScript, React, Node, Next e Java. Atuo desde 2020 e entrego interfaces claras, performaticas e alinhadas ao negocio.",
+    ctaPrimary: "Ver projetos",
+    ctaSecondary: "Falar comigo",
+    stats: [
+      { label: "Especialidade", value: "Front-end multiplataforma" },
+      { label: "Base", value: "Remoto, BR" },
+      { label: "Stack", value: "Kotlin, Flutter, React, Next" },
+    ],
+    profileEyebrow: "Perfil",
+    profileTitle: "Experiencia em produtos digitais ponta a ponta.",
+    profileDescription:
+      "Atuei em projetos remotos e tenho experiencia com desenvolvimento Android, iOS e integracoes com Firebase. Busco soluções diretas, com qualidade e consistencia visual.",
+    profileBullets: [
+      "Projetos remotos desde 2020",
+      "Android e iOS com foco em UX",
+      "Integrações com Firebase",
+    ],
+    aboutEyebrow: "Sobre",
+    aboutTitle: "Sobre mim",
+    aboutDescription:
+      "Desenvolvedor front-end com experiencia em Kotlin Jetpack Compose, Flutter, TypeScript, React, Node, Next e Java. Programo desde 2020, atuei em diversos projetos remotos e tenho experiencia com desenvolvimento Android e iOS.",
+    aboutLink: "trabalhos selecionados",
+    aboutCards: [
+      {
+        title: "Experiencia",
+        description: "Front-end multiplataforma com foco em produto.",
+      },
+      {
+        title: "Plataformas",
+        description: "Web, Android e iOS com interfaces consistentes.",
+      },
+      {
+        title: "Stack",
+        description: "Kotlin, Flutter, React, Next, Node e Java.",
+      },
+      {
+        title: "Interesses",
+        description: "Visual novels, JRPGs, animes, bike e paisagens.",
+      },
+    ],
+    techEyebrow: "Tecnologias",
+    techs: [
+      { label: "Kotlin", src: "https://skillicons.dev/icons?i=kotlin" },
+      { label: "Jetpack Compose", src: "https://skillicons.dev/icons?i=androidstudio" },
+      { label: "Flutter", src: "https://skillicons.dev/icons?i=flutter" },
+      { label: "TypeScript", src: "https://skillicons.dev/icons?i=typescript" },
+      { label: "React", src: "https://skillicons.dev/icons?i=react" },
+      { label: "Next.js", src: "https://skillicons.dev/icons?i=nextjs" },
+      { label: "Bitbucket", src: "https://skillicons.dev/icons?i=bitbucket" },
+      { label: "Tailwind CSS", src: "https://skillicons.dev/icons?i=tailwind" },
+      { label: "Node.js", src: "https://skillicons.dev/icons?i=nodejs" },
+      { label: "Java", src: "https://skillicons.dev/icons?i=java" },
+      { label: "Firebase", src: "https://skillicons.dev/icons?i=firebase" },
+    ],
+    projectsEyebrow: "Projetos",
+    projectsTitle: "Trabalhos selecionados",
+    projectImageLabel: "Imagem do projeto",
+    projectLinkLabel: "Ver detalhes →",
+    projects: [
+      {
+        title: "Juntoo",
+        description:
+          "App de linha de credito com experiencia clara e orientada a resultados.",
+        tag: "Fintech",
+        link: "https://apps.apple.com/br/app/junto%24/id1563846408",
+      },
+      {
+        title: "Guardiao do Consumidor",
+        description:
+          "App para consultar estado de credito com foco em clareza e confianca.",
+        tag: "Creditos",
+        link: "https://apps.apple.com/br/app/guardi%C3%A3o-do-consumidor/id6753079908",
+      },
+      {
+        title: "LBS",
+        description:
+          "Sistema de compras e estoque online para rede de joalherias.",
+        tag: "E-commerce",
+        link: "#contato",
+      },
+    ],
+    contactTitle: "Vamos conversar?",
+    contactDescription:
+      "Me chame para falar de projetos, parcerias ou novas oportunidades.",
+    scrollTopLabel: "Ir para o topo",
+    nav: {
+      about: "Sobre",
+      projects: "Projetos",
+      contact: "Contato",
+      talk: "Vamos conversar",
+    },
+  },
+  en: {
+    badge: "Available for new projects",
+    heroTitle: "Front-end focused on multiplatform consistency.",
+    heroDescription:
+      "I am a front-end developer with experience in Kotlin Jetpack Compose, Flutter, TypeScript, React, Node, Next, and Java. I have been building since 2020 and deliver clear, performant interfaces aligned with business goals.",
+    ctaPrimary: "View projects",
+    ctaSecondary: "Talk to me",
+    stats: [
+      { label: "Specialty", value: "Multiplatform front-end" },
+      { label: "Location", value: "Remote, BR" },
+      { label: "Stack", value: "Kotlin, Flutter, React, Next" },
+    ],
+    profileEyebrow: "Profile",
+    profileTitle: "End-to-end digital product experience.",
+    profileDescription:
+      "I have worked on remote projects and have experience with Android, iOS, and Firebase integrations. I focus on direct solutions with quality and visual consistency.",
+    profileBullets: [
+      "Remote projects since 2020",
+      "Android and iOS with UX focus",
+      "Firebase integrations",
+    ],
+    aboutEyebrow: "About",
+    aboutTitle: "About me",
+    aboutDescription:
+      "Front-end developer with experience in Kotlin Jetpack Compose, Flutter, TypeScript, React, Node, Next, and Java. I have been coding since 2020, worked on multiple remote projects, and have Android and iOS experience.",
+    aboutLink: "selected work",
+    aboutCards: [
+      {
+        title: "Experience",
+        description: "Multiplatform front-end focused on product.",
+      },
+      {
+        title: "Platforms",
+        description: "Web, Android, and iOS with consistent UI.",
+      },
+      {
+        title: "Stack",
+        description: "Kotlin, Flutter, React, Next, Node, and Java.",
+      },
+      {
+        title: "Interests",
+        description: "Visual novels, JRPGs, anime, biking, landscapes.",
+      },
+    ],
+    techEyebrow: "Technologies",
+    techs: [
+      { label: "Kotlin", src: "https://skillicons.dev/icons?i=kotlin" },
+      { label: "Jetpack Compose", src: "https://skillicons.dev/icons?i=compose" },
+      { label: "Flutter", src: "https://skillicons.dev/icons?i=flutter" },
+      { label: "TypeScript", src: "https://skillicons.dev/icons?i=typescript" },
+      { label: "React", src: "https://skillicons.dev/icons?i=react" },
+      { label: "Next.js", src: "https://skillicons.dev/icons?i=nextjs" },
+      { label: "Node.js", src: "https://skillicons.dev/icons?i=nodejs" },
+      { label: "Java", src: "https://skillicons.dev/icons?i=java" },
+      { label: "Firebase", src: "https://skillicons.dev/icons?i=firebase" },
+    ],
+    projectsEyebrow: "Projects",
+    projectsTitle: "Selected work",
+    projectImageLabel: "Project image",
+    projectLinkLabel: "View details →",
+    projects: [
+      {
+        title: "Juntoo",
+        description:
+          "Credit line app with a clear, results-oriented experience.",
+        tag: "Fintech",
+        link: "https://apps.apple.com/br/app/junto%24/id1563846408",
+      },
+      {
+        title: "Guardiao do Consumidor",
+        description:
+          "Credit status app focused on clarity and trust.",
+        tag: "Credit",
+        link: "https://apps.apple.com/br/app/guardi%C3%A3o-do-consumidor/id6753079908",
+      },
+      {
+        title: "LBS",
+        description:
+          "Online purchasing and inventory system for a jewelry chain.",
+        tag: "E-commerce",
+        link: "#contato",
+      },
+    ],
+    contactTitle: "Let’s talk?",
+    contactDescription:
+      "Reach out for projects, partnerships, or new opportunities.",
+    scrollTopLabel: "Back to top",
+    nav: {
+      about: "About",
+      projects: "Projects",
+      contact: "Contact",
+      talk: "Let’s talk",
+    },
+  },
+};
 
 export default function Home() {
   const heroRef = useRef<HTMLElement | null>(null);
+  const navRef = useRef<HTMLElement | null>(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isEnglish, setIsEnglish] = useState(false);
+  const t = isEnglish ? copy.en : copy.pt;
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -61,6 +258,29 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const nav = navRef.current;
+    if (!nav) {
+      return;
+    }
+
+    // Show the floating button when the navbar leaves the viewport.
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowScrollTop(!entry.isIntersecting);
+      },
+      {
+        threshold: 0,
+      }
+    );
+
+    observer.observe(nav);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
@@ -98,7 +318,7 @@ export default function Home() {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [isEnglish]);
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.18),transparent_55%)]">
       <section
@@ -107,11 +327,14 @@ export default function Home() {
       >
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/50 to-black" />
         <div className="hero-camera-content relative">
-          <header className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 pt-8">
+          <header
+            ref={navRef}
+            className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 pt-8"
+          >
             <div className="reveal flex items-center gap-3" data-reveal>
               <span className="h-3 w-3 rounded-full bg-[color:var(--accent)]" />
               <p className="text-sm uppercase tracking-[0.35em] text-[color:var(--muted)]">
-                Gabriel Trigueiro
+                Ayza
               </p>
             </div>
             <nav
@@ -119,23 +342,42 @@ export default function Home() {
               data-reveal
             >
               <a className="transition hover:text-white" href="#sobre">
-                Sobre
+                {t.nav.about}
               </a>
               <a className="transition hover:text-white" href="#projetos">
-                Projetos
+                {t.nav.projects}
               </a>
               <a className="transition hover:text-white" href="#contato">
-                Contato
+                {t.nav.contact}
               </a>
             </nav>
             <a
-              className="reveal rounded-full border border-white/15 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white transition hover:border-white/40"
+              className="rounded-full border border-white/15 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white transition hover:border-white/40"
               href="#contato"
-              data-reveal
             >
-              Vamos conversar
+              {t.nav.talk}
             </a>
           </header>
+          <button
+            aria-pressed={isEnglish}
+            className="reveal fixed left-6 top-6 z-50 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur transition hover:border-white/40"
+            data-reveal
+            onClick={() => setIsEnglish((prev) => !prev)}
+            type="button"
+          >
+            <span className="text-[9px] text-[color:var(--muted)]">
+              {isEnglish ? "Idioma EN" : "Idioma PT"}
+            </span>
+            <span className="relative h-5 w-9 rounded-full bg-white/10">
+              <span
+                className={`absolute top-1/2 flex h-4 w-4 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[10px] transition ${
+                  isEnglish ? "left-4.5" : "left-1"
+                }`}
+              >
+                {isEnglish ? "🇺🇸" : "🇧🇷"}
+              </span>
+            </span>
+          </button>
 
           <div className="mx-auto w-full max-w-5xl px-6 pb-24 pt-16">
             <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
@@ -145,24 +387,20 @@ export default function Home() {
                   data-reveal
                 >
                   <span className="h-2 w-2 rounded-full bg-[color:var(--accent-2)]" />
-                  Disponivel para novos projetos
+                  {t.badge}
                 </div>
                 <div className="space-y-5">
                   <h1
                     className="reveal text-4xl font-semibold leading-tight text-white sm:text-5xl"
                     data-reveal
                   >
-                    Front-end com foco em multiplataforma e experiencias
-                    consistentes.
+                    {t.heroTitle}
                   </h1>
                   <p
                     className="reveal text-lg leading-relaxed text-[color:var(--muted)]"
                     data-reveal
                   >
-                    Sou desenvolvedor front-end com experiencia em Kotlin Jetpack
-                    Compose, Flutter, TypeScript, React, Node, Next e Java. Atuo
-                    desde 2020 e entrego interfaces claras, performaticas e
-                    alinhadas ao negocio.
+                    {t.heroDescription}
                   </p>
                 </div>
                 <div className="reveal flex flex-wrap gap-4" data-reveal>
@@ -170,21 +408,17 @@ export default function Home() {
                     className="rounded-full bg-[color:var(--accent)] px-6 py-3 text-sm font-semibold text-[#0b0d12] transition hover:translate-y-[-2px] hover:shadow-[0_10px_30px_rgba(139,92,246,0.35)]"
                     href="#projetos"
                   >
-                    Ver projetos
+                    {t.ctaPrimary}
                   </a>
                   <a
                     className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"
                     href="#contato"
                   >
-                    Falar comigo
+                    {t.ctaSecondary}
                   </a>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-3">
-                  {[
-                    { label: "Especialidade", value: "Front-end multiplataforma" },
-                    { label: "Base", value: "Remoto, BR" },
-                    { label: "Stack", value: "Kotlin, Flutter, React, Next" },
-                  ].map((item, index) => (
+                  {t.stats.map((item, index) => (
                     <div
                       key={item.label}
                       className="reveal rounded-2xl border border-white/10 bg-white/5 p-4"
@@ -209,23 +443,17 @@ export default function Home() {
                 <div className="space-y-6">
                   <div className="space-y-3">
                     <p className="text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
-                      Perfil
+                      {t.profileEyebrow}
                     </p>
                     <h2 className="text-2xl font-semibold text-white">
-                      Experiencia em produtos digitais ponta a ponta.
+                      {t.profileTitle}
                     </h2>
                   </div>
                   <p className="text-sm leading-relaxed text-[color:var(--muted)]">
-                    Atuei em projetos remotos e tenho experiencia com
-                    desenvolvimento Android, iOS e integracoes com Firebase.
-                    Busco soluções diretas, com qualidade e consistencia visual.
+                    {t.profileDescription}
                   </p>
                   <div className="space-y-3">
-                  {[
-                      "Projetos remotos desde 2020",
-                      "Android e iOS com foco em UX",
-                      "Integrações com Firebase",
-                  ].map((item, index) => (
+                    {t.profileBullets.map((item, index) => (
                       <div
                         key={item}
                         className="flex items-center gap-3 text-sm text-white"
@@ -252,47 +480,25 @@ export default function Home() {
                 className="reveal text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]"
                 data-reveal
               >
-                Sobre
+                {t.aboutEyebrow}
               </p>
               <h2 className="reveal text-3xl font-semibold text-white" data-reveal>
-                Sobre mim
+                {t.aboutTitle}
               </h2>
               <p
                 className="reveal text-base leading-relaxed text-[color:var(--muted)]"
                 data-reveal
               >
-                Desenvolvedor front-end com experiencia em Kotlin Jetpack Compose,
-                Flutter, TypeScript, React, Node, Next e Java. Programo desde
-                2020, atuei em diversos projetos remotos e tenho experiencia com
-                desenvolvimento Android e iOS. Veja os projetos em
+                {t.aboutDescription}{" "}
                 <a className="text-white underline decoration-white/40" href="#projetos">
-                  {" "}
-                  trabalhos selecionados
+                  {t.aboutLink}
                 </a>
                 .
               </p>
             </div>
             <div className="space-y-6">
               <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  {
-                    title: "Experiencia",
-                    description: "Front-end multiplataforma com foco em produto.",
-                  },
-                  {
-                    title: "Plataformas",
-                    description: "Web, Android e iOS com interfaces consistentes.",
-                  },
-                  {
-                    title: "Stack",
-                    description: "Kotlin, Flutter, React, Next, Node e Java.",
-                  },
-                  {
-                    title: "Interesses",
-                    description:
-                      "Visual novels, JRPGs, animes, bike e paisagens.",
-                  },
-                ].map((item, index) => (
+                {t.aboutCards.map((item, index) => (
                   <div
                     key={item.title}
                     className="reveal rounded-2xl border border-white/10 bg-[color:var(--surface)] p-5"
@@ -313,20 +519,10 @@ export default function Home() {
                 data-reveal
               >
                 <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
-                  Tecnologias
+                  {t.techEyebrow}
                 </p>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  {[
-                    { label: "Kotlin", src: "/tech/kotlin.svg" },
-                    { label: "Jetpack Compose", src: "/tech/compose.svg" },
-                    { label: "Flutter", src: "/tech/flutter.svg" },
-                    { label: "TypeScript", src: "/tech/typescript.svg" },
-                    { label: "React", src: "/tech/react.svg" },
-                    { label: "Next.js", src: "/tech/nextjs.svg" },
-                    { label: "Node.js", src: "/tech/nodejs.svg" },
-                    { label: "Java", src: "/tech/java.svg" },
-                    { label: "Firebase", src: "/tech/firebase.svg" },
-                  ].map((tech, index) => (
+                  {t.techs.map((tech, index) => (
                     <div
                       key={tech.label}
                       className="reveal flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white"
@@ -355,44 +551,15 @@ export default function Home() {
                   className="reveal text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]"
                   data-reveal
                 >
-                  Projetos
+                  {t.projectsEyebrow}
                 </p>
                 <h2 className="reveal text-3xl font-semibold text-white" data-reveal>
-                  Trabalhos selecionados
+                  {t.projectsTitle}
                 </h2>
               </div>
-              <a
-                className="reveal text-sm font-semibold text-[color:var(--accent-2)]"
-                href="#contato"
-                data-reveal
-              >
-                Quero o meu →
-              </a>
             </div>
             <div className="mt-8 grid gap-6 lg:grid-cols-3">
-              {[
-                {
-                  title: "Juntoo",
-                  description:
-                    "App de linha de credito com experiencia clara e orientada a resultados.",
-                  tag: "Fintech",
-                  link: "https://apps.apple.com/br/app/junto%24/id1563846408",
-                },
-                {
-                  title: "Guardiao do Consumidor",
-                  description:
-                    "App para consultar estado de credito com foco em clareza e confianca.",
-                  tag: "Creditos",
-                  link: "https://apps.apple.com/br/app/guardi%C3%A3o-do-consumidor/id6753079908",
-                },
-                {
-                  title: "LBS",
-                  description:
-                    "Sistema de compras e estoque online para rede de joalherias.",
-                  tag: "E-commerce",
-                  link: "#contato",
-                },
-              ].map((item, index) => (
+              {t.projects.map((item, index) => (
                 <div
                   key={item.title}
                   className="reveal rounded-3xl border border-white/10 bg-[color:var(--surface)] p-6 transition hover:-translate-y-1 hover:border-white/25"
@@ -401,7 +568,7 @@ export default function Home() {
                 >
                   <div className="mb-4 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
                     <div className="flex aspect-[4/3] items-center justify-center text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
-                      Imagem do projeto
+                      {t.projectImageLabel}
                     </div>
                   </div>
                   <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
@@ -419,7 +586,7 @@ export default function Home() {
                     target={item.link.startsWith("http") ? "_blank" : undefined}
                     rel={item.link.startsWith("http") ? "noreferrer" : undefined}
                   >
-                    Ver detalhes →
+                    {t.projectLinkLabel}
                   </a>
                 </div>
               ))}
@@ -431,13 +598,13 @@ export default function Home() {
             className="mt-20 rounded-3xl border border-white/10 bg-[linear-gradient(160deg,_rgba(139,92,246,0.18),_rgba(21,25,35,0.9))] p-10 text-center"
           >
             <h2 className="reveal text-3xl font-semibold text-white" data-reveal>
-              Vamos conversar?
+              {t.contactTitle}
             </h2>
             <p
               className="reveal mt-4 text-base text-[color:var(--muted)]"
               data-reveal
             >
-              Me chame para falar de projetos, parcerias ou novas oportunidades.
+              {t.contactDescription}
             </p>
             <div className="reveal mt-8 flex flex-wrap justify-center gap-4" data-reveal>
               <a
@@ -474,6 +641,16 @@ export default function Home() {
           </section>
         </main>
       </section>
+      {showScrollTop && (
+        <button
+          className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-lg backdrop-blur transition hover:border-white/40"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          type="button"
+        >
+          <span className="text-base">↑</span>
+          {t.scrollTopLabel}
+        </button>
+      )}
     </div>
   );
 }
