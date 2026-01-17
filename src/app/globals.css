@@ -67,6 +67,16 @@ html {
   transform: translate3d(0, 0, 0);
 }
 
+.glass-card {
+  background-color: rgba(21, 25, 35, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 18px 60px rgba(7, 10, 20, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-camera-content,
   .reveal {

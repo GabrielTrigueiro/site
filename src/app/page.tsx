@@ -69,23 +69,26 @@ const copy = {
       {
         title: "Juntoo",
         description:
-          "App de linha de credito com experiencia clara e orientada a resultados.",
+          "App de linha de credito com indicações, solicitação de limite e controle de gastos.",
         tag: "Fintech",
-        link: "https://apps.apple.com/br/app/junto%24/id1563846408",
+        link: "https://apps.apple.com/br/app/juntoo/id6751834827",
+        image: "/Shot-juntoo.png",
       },
       {
         title: "Guardiao do Consumidor",
         description:
-          "App para consultar estado de credito com foco em clareza e confianca.",
+          "App para consultar estado de credito para ter conhecimento do seu score e pendencias.",
         tag: "Creditos",
         link: "https://apps.apple.com/br/app/guardi%C3%A3o-do-consumidor/id6753079908",
+        image: "/Shot.png",
       },
       {
-        title: "LBS",
+        title: "Posimed",
         description:
-          "Sistema de compras e estoque online para rede de joalherias.",
-        tag: "E-commerce",
-        link: "#contato",
+          "App de telemedicina 24 horas.",
+        tag: "Saude",
+        link: "https://apps.apple.com/br/app/posimed/id6746877519",
+        image: "/shot-posimed.png",
       },
     ],
     contactTitle: "Vamos conversar?",
@@ -163,23 +166,25 @@ const copy = {
       {
         title: "Juntoo",
         description:
-          "Credit line app with a clear, results-oriented experience.",
+          "Credit line app with referrals, limit requests, and spending control.",
         tag: "Fintech",
-        link: "https://apps.apple.com/br/app/junto%24/id1563846408",
+        link: "https://apps.apple.com/br/app/juntoo/id6751834827",
+        image: "/Shot-juntoo.png",
       },
       {
         title: "Guardiao do Consumidor",
         description:
-          "Credit status app focused on clarity and trust.",
+          "Credit status app to track your score and outstanding issues.",
         tag: "Credit",
         link: "https://apps.apple.com/br/app/guardi%C3%A3o-do-consumidor/id6753079908",
+        image: "/Shot.png",
       },
       {
-        title: "LBS",
-        description:
-          "Online purchasing and inventory system for a jewelry chain.",
-        tag: "E-commerce",
-        link: "#contato",
+        title: "Posimed",
+        description: "24/7 telemedicine app.",
+        tag: "Saude",
+        link: "https://apps.apple.com/br/app/posimed/id6746877519",
+        image: "/shot-posimed.png",
       },
     ],
     contactTitle: "Let’s talk?",
@@ -421,7 +426,7 @@ export default function Home() {
                   {t.stats.map((item, index) => (
                     <div
                       key={item.label}
-                      className="reveal rounded-2xl border border-white/10 bg-white/5 p-4"
+                      className="glass-card reveal rounded-2xl p-4"
                       data-reveal
                       style={{ "--reveal-delay": `${index * 60}ms` } as React.CSSProperties}
                     >
@@ -437,7 +442,7 @@ export default function Home() {
               </div>
 
               <div
-                className="reveal rounded-3xl border border-white/10 bg-[linear-gradient(135deg,_rgba(34,211,238,0.16),_rgba(139,92,246,0.12))] p-8"
+                className="glass-card reveal rounded-3xl p-8"
                 data-reveal
               >
                 <div className="space-y-6">
@@ -501,7 +506,7 @@ export default function Home() {
                 {t.aboutCards.map((item, index) => (
                   <div
                     key={item.title}
-                    className="reveal rounded-2xl border border-white/10 bg-[color:var(--surface)] p-5"
+                    className="glass-card reveal rounded-2xl p-5"
                     data-reveal
                     style={{ "--reveal-delay": `${index * 60}ms` } as React.CSSProperties}
                   >
@@ -515,7 +520,7 @@ export default function Home() {
                 ))}
               </div>
               <div
-                className="reveal rounded-2xl border border-white/10 bg-[color:var(--surface)] p-5"
+                className="glass-card reveal rounded-2xl p-5"
                 data-reveal
               >
                 <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
@@ -562,14 +567,17 @@ export default function Home() {
               {t.projects.map((item, index) => (
                 <div
                   key={item.title}
-                  className="reveal rounded-3xl border border-white/10 bg-[color:var(--surface)] p-6 transition hover:-translate-y-1 hover:border-white/25"
+                  className="glass-card reveal rounded-3xl p-6 transition hover:-translate-y-1 hover:border-white/30"
                   data-reveal
                   style={{ "--reveal-delay": `${index * 80}ms` } as React.CSSProperties}
                 >
                   <div className="mb-4 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-                    <div className="flex aspect-[4/3] items-center justify-center text-xs uppercase tracking-[0.35em] text-[color:var(--muted)]">
-                      {t.projectImageLabel}
-                    </div>
+                    <img
+                      alt={item.title}
+                      className="aspect-[4/3] w-full object-cover"
+                      loading="lazy"
+                      src={item.image}
+                    />
                   </div>
                   <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--muted)]">
                     {item.tag}
@@ -595,7 +603,7 @@ export default function Home() {
 
           <section
             id="contato"
-            className="mt-20 rounded-3xl border border-white/10 bg-[linear-gradient(160deg,_rgba(139,92,246,0.18),_rgba(21,25,35,0.9))] p-10 text-center"
+            className="glass-card mt-20 rounded-3xl p-10 text-center"
           >
             <h2 className="reveal text-3xl font-semibold text-white" data-reveal>
               {t.contactTitle}
